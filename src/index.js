@@ -77,10 +77,68 @@ function calculateTotalPrice(){
 }
 
 
+const citiesByCountry = {
+    sa:[' جدة ' , ' الرياض '],
+    eg:['الاسكندرية' , ' القاهرة'],
+    jo:['الزرقاء' , 'عمان'],
+    sy:['دمشق' , 'حماة' , 'حلب' ]
+
+}
+document.querySelectorAll('select[name="country"]').forEach (item =>{
+    item.addEventListener('change' , () => {
+        const country = item.value
+
+        const cities = citiesByCountry[country]
+
+        document.querySelectorAll('#paymentcities option').forEach(option => option.remove() )
+
+        const firstoption = document.createElement('option')
+        const textoption = document.createTextNode('اختر المدينة')
+        firstoption.appendChild(textoption)
+        firstoption.setAttribute('value' , '')
+        firstoption.setAttribute('disabled' , 'true')
+        firstoption.setAttribute('selected' , 'true')
+
+        const city_option = document.getElementById('paymentcities')
+        city_option.appendChild(firstoption)
+
+        cities.forEach(city =>{
+            const newoption = document.createElement('option')
+            const textoption = document.createTextNode( city)
+            newoption.appendChild(textoption)
+            firstoption.setAttribute('value' , city)
+            city_option.appendChild(newoption)
+
+
+        })
+    })
+})
+
+//  اخفاء و اظهار حقول البطاقة الإئتمانية  في صفحة payment
+
+
+document.querySelectorAll('#form-checkout input[name="payment-method"]').forEach (item => {
+    item.addEventListener('change' , () => {
+        const paymentmethod = item.value ;
+        const ceaditCardInputs = document.querySelectorAll('#credit-card-info input');
+        if(paymentmethod === 'on-delivery') {
+            ceaditCardInputs.forEach(input => {
+                input.style.display='none'
+            })
+        }
+        else{
+            ceaditCardInputs.forEach(input => {
+                input.style.display='block'
+            })
+        }
+    })
+})
+
+
+
+
 
 
 document.getElementById("coptright").innerHTML  =   "جميع الحقوق محفوظة للمتجر سنة "  +  new Date().getFullYear()
 
 
-console.log ("اهلا بك في متجر عربي");
-console.log ("اهلا بك في اكاديمية حسوب");

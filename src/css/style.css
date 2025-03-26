@@ -632,6 +632,30 @@ h1.custom-heading{
     border-color: #f8ad47 !important;
 
 }
+#map{
+    padding: 0;
+}
+.heading-contact-border-bottom{
+    border-bottom: 1px solid #EBEBEB;
+    padding-bottom: 20px;
+    font-size: 18px;
+}
+.contact-info{
+    padding: 8px;
+}
+.contact-icon{
+    color: #f3af41;
+    padding-left: 15px;
+    transition: all 0.5s ease;
+}
+.contact-icon:hover{
+    color: #b86d07;
+
+}
+
+#contact-option textarea{
+    height: 105px !important;
+}
 
 
 @media (max-width: 1400px) { 
@@ -736,6 +760,12 @@ h1.custom-heading{
         justify-content: center;
         align-items: center;
     }
+    .contact-message{
+        margin-top: 20px;
+    }
+    .custom-leave-a-message{
+        border: 1px solid #EBEBEB;
+    }
  }
 
  @media (max-width: 768px) {
@@ -794,6 +824,9 @@ h1.custom-heading{
     .comments{
         padding-right: 15px;
     }
+    /* .custom-leave-a-message{
+        width: 100%;
+    } */
  }
 
 

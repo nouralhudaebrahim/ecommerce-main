@@ -1,8 +1,9 @@
 window.bootstrap = require('bootstrap/dist/js/bootstrap.bundle.js');
- import 'bootstrap/dist/css/bootstrap.min.css';
+ import './sass/custom.scss';
 import './css/style.css';
 import '@fortawesome/fontawesome-free/js/all.min.js';
 import * as bootstrap from 'bootstrap';
+import './sass/style.scss';
 
 const tooltipTriggerList = document.querySelectorAll('[data-bs-toggle="tooltip"]')
 const tooltipList = [...tooltipTriggerList].map(tooltipTriggerEl => new bootstrap.Tooltip(tooltipTriggerEl))

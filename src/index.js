@@ -1,8 +1,8 @@
 window.bootstrap = require('bootstrap/dist/js/bootstrap.bundle.js');
- import './sass/custom.scss';
+import './sass/custom.scss';
 import './css/style.css';
 import '@fortawesome/fontawesome-free/js/all.min.js';
-import * as bootstrap from 'bootstrap';
+// import * as bootstrap from 'bootstrap';
 import './sass/style.scss';
 
 const tooltipTriggerList = document.querySelectorAll('[data-bs-toggle="tooltip"]')
@@ -13,9 +13,9 @@ document.querySelectorAll('.add-to-cart-btn').forEach(item => {
         alert("أضيف المنتج إلى عربة الشراء")
     })
 })
-
+// اختيار القياس واللون 
 document.querySelectorAll('.size-option input[type="radio"]').forEach(item => {
-    item.addEventListener('chang', () => {
+    item.addEventListener('change', () => {
         document.querySelectorAll('.size-option').forEach(i => {
             i.classList.remove('active')
         })
@@ -24,7 +24,7 @@ document.querySelectorAll('.size-option input[type="radio"]').forEach(item => {
 })
 
 document.querySelectorAll('.color-option input[type="radio"]').forEach(item => {
-    item.addEventListener('chang', () => {
+    item.addEventListener('change', () => {
         document.querySelectorAll('.color-option').forEach(i => {
             i.classList.remove('active')
         })
